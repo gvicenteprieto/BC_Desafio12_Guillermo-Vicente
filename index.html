@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author"
+        content="Guillermo Vicente - Bootcamp Full Stack Engineer - Desafio 12: CRUD - Lista de Contactos" />
+    <meta name="copyright" content="Ref. to author | 2023 todos los derechos reservados" />
+    <meta name="description"
+        content="Entrega Desafio 12: CRUD - Lista de Contactos en JavaScript| Bootcamp Full Stack Engineer para Educacion IT" />
+    <meta name="keywords" content="HTML5, CSS3, Git, GitHub, JavaScript, Objetcs, JSON, CRUD, Fetch, Firebase, EducacionIT" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>CRUD</title>
+</head>
+
+<body>
+    <header class="Header">
+        <h1>CRUD en Javascript</h1>
+        <h3>FETCH + FIREBASE</h3>
+    </header>
+
+    <main>
+        <header>
+            <h3>Formulario de creación, edición, y eliminación de registros</h3>
+        </header>
+        <form id="form">
+            <div id="info"></div>
+            <div>
+                <div>
+                    <!-- <label for="id">Id</label> -->
+                    <input type="hidden" id="id">
+                </div>
+                <div>
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name">
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input type="text" id="email">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="birthday">Nacimiento</label>
+                    <input type="date" id="birthday">
+                </div>
+                <div id="options">
+                    <label for="action">Acción</label>
+                    <select name="action" id="action">
+                        <option value="add" >Agregar Contacto</option>
+                        <option value="update" >Actualizar Registro</option>
+                        <option value="delete" >Eliminar Registro</option>
+                    </select>
+                </div>
+            </div>
+            <input type="submit" value="Enviar Datos">
+        </form>
+        <div id="message"></div>
+        <table id="table">
+            <tbody id="tbody">
+            </tbody> 
+        </table>
+    </main>
+ 
+    <footer class="Footer">
+        <p>Bootcamp Full Stack Engineer - EducacionIt</p>
+        <p>Desafio 12: CRUD en Javascript</p>
+        <p>2023 - Guillermo Vicente</p>
+    </footer>
+
+    <script src="./index.js"></script>
+        
+</body>
+
+</html>

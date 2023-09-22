@@ -1,0 +1,228 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(171, 192, 200);
+}
+
+/*  HEADER  */
+.Header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    background-color: #333;
+    border-bottom: 3px solid #ffffff;
+    height: auto;
+}
+
+.Header h1 {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+    padding: 0px;
+}
+
+.Header h3 {
+    color: rgb(248, 123, 123);
+    font-size: 1.2rem;
+    padding: 0;
+}
+
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main header {
+    text-align: center;
+    margin: 5px;
+}
+
+main header h3 {
+    text-align: center;
+    color: #000
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 0;
+}
+
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #585585;
+    color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #048a16;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+#options {
+    text-align: center;
+}
+
+#message {
+    text-align: center;
+    color: green;
+    font-weight: bold;
+}
+#info {
+    text-align: center;
+    color:#bc0505;
+    font-weight: bold;
+}
+
+.add {
+    background-color: rgb(20, 209, 20);
+    font-size: 16px;
+    /* font-weight: bold; */
+    color: #000000;
+    text-align: center;
+}
+
+.delete {
+    font-size: 16px;
+    /* font-weight: bold; */
+    background-color: #bc0505;
+    color: #fff;
+    text-align: center;
+}
+
+.update {
+    background-color: #ffd000;
+    font-size: 16px;
+    /* font-weight: bold; */
+    color: #000000;
+    text-align: center;
+}
+
+.btn {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 75px;
+}
+
+.btn-danger {
+    background-color: #bc0505;
+    border: 1px solid #333;
+}
+
+.btn-warning {
+    background-color: #ffd000;
+    color: black;
+    font-weight: bold;
+    border: 1px solid #333;
+}
+
+
+/* .btn:hover {
+    background-color: #333;
+} */
+
+.btn-danger:hover {
+    background-color: #f00;
+}
+
+.btn-warning:hover {
+    background-color: #ffe100;
+}
+
+.btn-success {
+    background-color: #0f0;
+}
+
+.btn-success:hover {
+    background-color: #0f0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+tr:nth-child(odd) td {
+    background-color: #ddd;
+}
+
+#table {
+    margin: 0 auto;
+    width: 80%;
+    clear: both;
+}
+
+/* FOOTER */
+.Footer {
+    border-top: 3px solid #ffffff;
+    background-color: #333;
+    margin-top: 3rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: .5rem;
+}
+
+.Footer p {
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    width: auto;
+}
