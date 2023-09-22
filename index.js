@@ -60,9 +60,6 @@ class Contact {
         Object.entries(contactList).forEach(([key, value]) => {
             console.log(key, value);
             if (contact.id == value.id) {
-                // console.log(contact)
-                // console.log(value)
-                // console.log(key)
                 return idDel = key;
             }
         });
@@ -145,6 +142,14 @@ form.addEventListener('submit', function (e) {
     let info = document.getElementById('info');
    info.innerHTML = '';
 
+    if (userName.value == '' || email.value == '' || birthday.value == '') {
+        info.innerHTML += 'Todos los campos son obligatorios';
+        setTimeout(() => {
+            info.innerHTML = '';
+        }, 2000);
+        return false;
+    }
+
     if (!regexName.test(userName.value)) {
         info.innerHTML += 'El nombre no es válido';
         setTimeout(() => {
@@ -169,10 +174,10 @@ form.addEventListener('submit', function (e) {
         return false;
     }
 
+    let birthdate = birthday.value.split('-').reverse().join('/');
     switch (action.value) {
         case 'add':
             contact.fetchPostContact(contact);
-            let birthdate = birthday.value.split('-').reverse().join('/');
             table.innerHTML = '';
             message.innerHTML = `
             Contacto agregado con éxito 
@@ -184,7 +189,7 @@ form.addEventListener('submit', function (e) {
             setTimeout(() => {
                 message.remove();
                 
-            }, 3000);
+            }, 3500);
             break;
         case 'update':
             contact.fetchPutContact(idContact.value);
@@ -193,12 +198,12 @@ form.addEventListener('submit', function (e) {
             REGISTRO DE CONTACTO ACTUALIZADO CON EXITO 
             <p>Nombre: ${userName.value}</p>
             <p>Email: ${email.value}</p>
-            <p>Fecha de nacimiento: ${birthday.value}</p>            
+            <p>Fecha de nacimiento: ${birthdate}</p>            
             `;
             form.append(message);
             setTimeout(() => {
                 message.remove();
-            }, 3000);
+            }, 3500);
             break;
         case 'delete':
             contact.fetchDeleteContact(idContact.value);
@@ -207,12 +212,12 @@ form.addEventListener('submit', function (e) {
             REGISTRO DE CONTACTO ELIMINADO CON EXITO
             <p>Nombre: ${userName.value}</p>
             <p>Email: ${email.value}</p>
-            <p>Fecha de nacimiento: ${birthday.value}</p>            
+            <p>Fecha de nacimiento: ${birthdate}</p>          
             `;
             form.append(message);
             setTimeout(() => {
                 message.remove();
-            }, 3000);
+            }, 3500);
         break;
     }
     
@@ -220,6 +225,7 @@ form.addEventListener('submit', function (e) {
         contact.fetchGetContact();
          setTimeout(() => {
             renderContacts();
+            form.reset();
         }, 1000);
     }, 3000);
 });
@@ -241,7 +247,6 @@ function deleteContact(id) {
 
 function updateContact(id) {
     action.value = 'update';
-    //pasando objeto contactList a array data
     data = Object.values(contactList);
     data.forEach(element => {
         if (element.id == id) {

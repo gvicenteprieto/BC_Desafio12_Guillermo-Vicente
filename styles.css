@@ -8,7 +8,7 @@ html {
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(171, 192, 200);
+    background-color: #abc0c8;
 }
 
 /*  HEADER  */
@@ -24,13 +24,13 @@ body {
 }
 
 .Header h1 {
-    color: rgb(255, 255, 255);
+    color: #ffffff;
     font-size: 1.5rem;
     padding: 0px;
 }
 
 .Header h3 {
-    color: rgb(248, 123, 123);
+    color: #918eba;
     font-size: 1.2rem;
     padding: 0;
 }
@@ -99,8 +99,10 @@ select {
     text-align: center;
     font-size: 18px;
 }
+
 #options {
     text-align: center;
+    color: green;
 }
 
 #message {
@@ -111,6 +113,11 @@ select {
 #info {
     text-align: center;
     color:#bc0505;
+    font-weight: bold;
+}
+
+#action {
+    text-align: center;
     font-weight: bold;
 }
 
