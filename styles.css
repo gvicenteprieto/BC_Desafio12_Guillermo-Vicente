@@ -117,14 +117,12 @@ select {
 .add {
     background-color: rgb(20, 209, 20);
     font-size: 16px;
-    /* font-weight: bold; */
     color: #000000;
     text-align: center;
 }
 
 .delete {
     font-size: 16px;
-    /* font-weight: bold; */
     background-color: #bc0505;
     color: #fff;
     text-align: center;
@@ -133,7 +131,6 @@ select {
 .update {
     background-color: #ffd000;
     font-size: 16px;
-    /* font-weight: bold; */
     color: #000000;
     text-align: center;
 }
@@ -159,11 +156,6 @@ select {
     font-weight: bold;
     border: 1px solid #333;
 }
-
-
-/* .btn:hover {
-    background-color: #333;
-} */
 
 .btn-danger:hover {
     background-color: #f00;
