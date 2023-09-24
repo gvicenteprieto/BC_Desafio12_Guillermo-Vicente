@@ -3,6 +3,7 @@ let userName = document.getElementById('name');
 let email = document.getElementById('email');
 let birthday = document.getElementById('birthday');
 let action = document.getElementById('action');
+let resetAction = document.getElementById('resetAction');
 let idContact = document.getElementById('id');
 let message = document.getElementById('message')
 let table = document.getElementById('table');
@@ -10,6 +11,24 @@ let table = document.getElementById('table');
 let contactList = [];
 let urlDB = 'https://contactos-71abf-default-rtdb.firebaseio.com/';
 
+let begin = () => {
+    form.reset();
+    idContact.value = '';
+    action.value = 'add';
+    userName.focus();
+
+    let getContactList = () => {
+        fetch(urlDB + 'contacts.json')
+            .then(response => response.json())
+            .then(data => {
+                contactList = data;
+                return contactList;
+            })
+        .catch(error => console.log(error));
+    }
+    getContactList();
+}
+begin();
 class Contact {
     constructor(id, name, email, birthday) {
         this.id = id;
@@ -18,7 +37,6 @@ class Contact {
         this.birthday = birthday;
     }
 
-    //GET contact List
     fetchGetContact() {
         fetch(urlDB + 'contacts.json')
             .then(response => response.json())
@@ -29,7 +47,6 @@ class Contact {
         .catch(error => console.log(error));
     }
 
-    //POST contact
     fetchPostContact() {
         let contact = new Contact(id.value, userName.value, email.value, birthday.value);
         if (contact.id == '') {
@@ -47,7 +64,6 @@ class Contact {
         .catch(error => console.log(error));
     }
 
-    //PUT contact
     fetchPutContact(id) {
         let contact = {
             id: idContact.value,
@@ -76,7 +92,6 @@ class Contact {
         .catch(error => console.log(error));
     }
 
-    //DELETE contact
     fetchDeleteContact(id) {
         let contact = {
             id: idContact.value,
@@ -106,7 +121,6 @@ class Contact {
 }
 
 let contact = new Contact();
-contact.fetchGetContact();
 
 setTimeout(() => {
     contactList ? renderContacts() : table.innerHTML = `
@@ -117,6 +131,19 @@ setTimeout(() => {
 
 let renderContacts = () => {
     let data = Object.values(contactList) ? Object.values(contactList) : data = [];
+    table.innerHTML = `<table class="table">
+    <caption>
+        <h4>Lista de contactos</h4>
+    </caption>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Fecha de nacimiento</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>`;
     data.forEach(element => {
         let birthdate = element.birthday.split('-').reverse().join('/');
         table.innerHTML += `
@@ -140,7 +167,7 @@ form.addEventListener('submit', function (e) {
     let regexEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
     let regexBirthday = /^\d{4}-\d{2}-\d{2}$/;
     let info = document.getElementById('info');
-   info.innerHTML = '';
+    info.innerHTML = '';
 
     if (userName.value == '' || email.value == '' || birthday.value == '') {
         info.innerHTML += 'Todos los campos son obligatorios';
@@ -230,8 +257,17 @@ form.addEventListener('submit', function (e) {
     }, 3000);
 });
 
+resetAction.addEventListener('click', function (e) {
+    e.preventDefault();
+    form.reset();
+    idContact.value = '';
+    action.value = 'add';
+    userName.focus();
+});
+
 function deleteContact(id) {
     action.value = 'delete';
+    userName.focus();
     idContact.value = id;
     data = Object.values(contactList);
     data.forEach(element => {
@@ -247,6 +283,7 @@ function deleteContact(id) {
 
 function updateContact(id) {
     action.value = 'update';
+    userName.focus();
     data = Object.values(contactList);
     data.forEach(element => {
         if (element.id == id) {

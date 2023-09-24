@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 html {
@@ -26,91 +28,126 @@ body {
 .Header h1 {
     color: #ffffff;
     font-size: 1.5rem;
-    padding: 0px;
+    padding: 10px;
 }
 
 .Header h3 {
     color: #918eba;
     font-size: 1.2rem;
-    padding: 0;
+    padding: 10px;
 }
 
-
-
-main {
+.Main {
     display: flex;
     flex-direction: column;
     align-items: center;
+   min-height: 750px;
 }
 
-main header {
+.Main header {
     text-align: center;
-    margin: 5px;
+    margin-top: 2rem;
+    width: 80%;
+    padding: 1rem;
+    border-bottom: 3px solid #918eba;
 }
 
-main header h3 {
+.Main header h4 {
     text-align: center;
-    color: #000
+    font-size: 19px;
+    color: #4b4787;
 }
 
-form {
+.Main form {
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin: 0;
+    margin-top: 20px;
 }
 
 
-label {
+.Main form label {
     display: block;
     font-weight: bold;
     margin-top: 10px;
 }
 
-input,
+.Main form input,
 select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-input[type="submit"] {
-    background-color: #585585;
+.Main form input[type="submit"] {
+    background-color: #918eba;
     color: #fff;
     cursor: pointer;
     font-size: 17px;
     font-weight: bold;
+    padding: 15px;
 }
 
-input[type="submit"]:hover {
+.Main form input[type="submit"]:hover {
     background-color: #048a16;
 }
 
-select {
-    width: 100%;
-    padding: 10px;
+.Main form select {
+    width: 80%;
     border: 1px solid #ccc;
     border-radius: 3px;
     margin-top: 5px;
     margin-bottom: 10px;
-    text-align: center;
     font-size: 18px;
 }
 
-#options {
+.Main form #select {
     text-align: center;
-    color: green;
+    font-size: 17px;
+    color: #076407;
 }
 
-#message {
+.Main form #options {
     text-align: center;
-    color: green;
+    color: #076407;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+.Main form #options .reset {
+    background-color: #9f5130;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 30%;
+    height: 35px;
+    margin: 5px;
+
+}
+
+.Main #message {
+    margin: 10px;
+    text-align: center;
+    color: #2b2392;
+    font-weight: bold;
+    font-size: 18px;
+}
+.Main #message p{
+    margin-top: 10px;
+    text-align: left;
+    color: #2b2392;
     font-weight: bold;
 }
-#info {
+
+.Main #info {
     text-align: center;
     color:#bc0505;
     font-weight: bold;
@@ -119,27 +156,6 @@ select {
 #action {
     text-align: center;
     font-weight: bold;
-}
-
-.add {
-    background-color: rgb(20, 209, 20);
-    font-size: 16px;
-    color: #000000;
-    text-align: center;
-}
-
-.delete {
-    font-size: 16px;
-    background-color: #bc0505;
-    color: #fff;
-    text-align: center;
-}
-
-.update {
-    background-color: #ffd000;
-    font-size: 16px;
-    color: #000000;
-    text-align: center;
 }
 
 .btn {
@@ -177,11 +193,11 @@ select {
 }
 
 .btn-success:hover {
-    background-color: #0f0;
+    background-color: rgb(12, 152, 12);
 }
 
 table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
 }
 
@@ -205,6 +221,20 @@ tr:nth-child(odd) td {
     margin: 0 auto;
     width: 80%;
     clear: both;
+    border: 1px solid #333;
+    border-radius: 3px;
+}
+
+#table caption {
+    border-top: 3px solid #918eba
+}
+
+#table caption h4 {
+    color: #4b4787;
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+    font-size: 20px;
 }
 
 /* FOOTER */
@@ -218,10 +248,11 @@ tr:nth-child(odd) td {
     align-items: center;
     text-align: center;
     padding: .5rem;
+    height: auto;
 }
 
 .Footer p {
     color: rgb(255, 255, 255);
     font-size: 16px;
-    width: auto;
+    padding: 5px
 }

@@ -9,7 +9,7 @@
     <meta name="copyright" content="Ref. to author | 2023 todos los derechos reservados" />
     <meta name="description"
         content="Entrega Desafio 12: CRUD - Lista de Contactos en JavaScript| Bootcamp Full Stack Engineer para Educacion IT" />
-    <meta name="keywords" content="HTML5, CSS3, Git, GitHub, JavaScript, Objetcs, Class, JSON, CRUD, Fetch, Firebase, EducacionIT" />
+    <meta name="keywords" content="HTML5, CSS3, Git, GitHub, JavaScript, Objetcs, Class, JSON, CRUD, Fetch, DataBase, Firebase, EducacionIT" />
     <link rel="stylesheet" href="./styles.css" />
     <title>CRUD</title>
 </head>
@@ -20,9 +20,9 @@
         <h3>FETCH + FIREBASE</h3>
     </header>
 
-    <main>
+    <main class="Main">
         <header>
-            <h3>Formulario de creación, edición, y eliminación de registros</h3>
+            <h4>Formulario de creación, edición, y eliminación de registros</h4>
         </header>
         <form id="form">
             <div id="info"></div>
@@ -45,13 +45,16 @@
                     <label for="birthday">Nacimiento</label>
                     <input type="date" id="birthday">
                 </div>
-                <div id="options">
-                    <label for="action">SELECCIONE LA ACCION Y ENVIE LOS DATOS</label>
-                    <select name="action" id="action">
-                        <option value="add" >Agregar Contacto</option>
-                        <option value="update" >Actualizar Registro</option>
-                        <option value="delete" >Eliminar Registro</option>
-                    </select>
+                <div id="select">
+                    <label for="action">SELECCIONE LA OPCION Y ENVIE LOS DATOS</label>
+                    <div id="options">
+                        <select name="action" id="action">
+                            <option value="add" class="add">Crear Registro</option>
+                            <option value="update" class="update">Actualizar Registro</option>
+                            <option value="delete" class="delete">Eliminar Registro</option>
+                        </select>
+                        <button class="reset" id="resetAction">Resetear</button>
+                    </div>
                 </div>
             </div>
             <input type="submit" value="Enviar Datos">
