@@ -12,25 +12,29 @@ Aplicación que permita a los usuarios crear y editar una lista de contactos. Ca
 
 - Datos de entrada y salida:
 
-El usuario podrá agregar, actualizar y eliminar contactos. 
+El usuario podrá agregar, actualizar y eliminar contactos.
 
 Los datos de entrada serán los siguientes:
 
-* Nombre del contacto
-* Email del contacto
-* Fecha de nacimiento del contacto
-* Acción a realizar (agregar, actualizar o eliminar)
-* ID del contacto (para actualizar o eliminar un contacto)
+- Nombre del contacto
+- Email del contacto
+- Fecha de nacimiento del contacto
+- Acción a realizar (agregar, actualizar o eliminar)
+- ID del contacto (para actualizar o eliminar un contacto)
 
 Los datos de salida serán:
 
-* Lista de contactos existentes
-* Mensajes de confirmación de operaciones exitosas
+- Lista de contactos existentes
+- Mensajes de confirmación de operaciones exitosas
 
 Requerimientos funcionales:
 
-* Agregar un nuevo contacto con su respectivo nombre, email y fecha de nacimiento.
-* Actualizar la información asociada a un contacto existente.
-* Eliminar un contacto existente.
-* Mostrar una lista de todos los contactos existentes.
-* Validar que los campos obligatorios estén completos antes de agregar o actualizar un contacto.
+- Agregar un nuevo contacto con su respectivo nombre, email y fecha de nacimiento.
+- Actualizar la información asociada a un contacto existente.
+- Eliminar un contacto existente.
+- Mostrar una lista de todos los contactos existentes.
+- Validar que los campos obligatorios estén completos antes de agregar o actualizar un contacto.
+
+### Deployment
+
+- [GitHub Page](https://gvicenteprieto.github.io/BC_Desafio12_Guillermo-Vicente/)

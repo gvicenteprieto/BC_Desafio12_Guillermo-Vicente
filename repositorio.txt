@@ -1,3 +1,7 @@
 Repositorio:
 
 - [Repository](https://github.com/gvicenteprieto/BC_Desafio12_Guillermo-Vicente)
+
+Deploy:
+
+- [Deploy](https://gvicenteprieto.github.io/BC_Desafio12_Guillermo-Vicente/)
